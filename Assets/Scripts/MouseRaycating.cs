@@ -9,7 +9,7 @@ public class MouseRaycating : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
-
+        //Hide cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -25,8 +25,18 @@ public class MouseRaycating : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-
-                StartCoroutine(SphereIndicator(hit.point));
+                // get component transform from object dat we hit
+                GameObject hitObject = hit.transform.gameObject;
+                // try get component ReactiveTarget, 
+                // if this script is attach to object, then object is active
+                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+                if (target != null)
+                {
+                    target.ReactToHit();
+                }
+                else {
+                    StartCoroutine(SphereIndicator(hit.point));
+                }
             }
 
         }
@@ -43,7 +53,7 @@ public class MouseRaycating : MonoBehaviour
 
     void OnGUI()
     {
-        Debug.Log("OnGui ");
+        //Debug.Log("OnGui ");
         int size = 12;
         float posX = _camera.pixelWidth / 2 - size / 4;
         float posY = _camera.pixelHeight / 2 - size / 4;
