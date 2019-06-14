@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 1e84d98d3a6f1d54391980494e70ed9e
+  productGUID: 92b6b5f6e5ab7c64eaa5c5559169c50e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: UnityBookCourse
+  productName: CSharpCurse
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -618,9 +618,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 95852e6c-66d8-4405-a2ec-882e62a46962
+  cloudProjectId: 8160c004-4343-412e-94f1-fcd19890eb13
   framebufferDepthMemorylessMode: 0
-  projectName: UnityBookCourse
+  projectName: CSharpCurse
   organizationId: shadoofjumper
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
