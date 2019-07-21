@@ -6,9 +6,25 @@ public class WanderingAI : MonoBehaviour
 {
     public float speed = 1.5f; //значение скорости
     public float obstacleRange = 0.5f; // рейнж проверки
+    public const float baseSpeed = 3.0f;
 
     [SerializeField] public GameObject fireballPrefab;
     private GameObject _fireball;
+
+    void Awake()
+    {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChaged);
+    }
+       
+    void OnDestroy()
+    {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChaged);
+    }
+
+    private void OnSpeedChaged(float value)
+    {
+        speed = baseSpeed * value;
+    }
 
     // Update is called once per frame
     void Update()

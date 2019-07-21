@@ -34,6 +34,8 @@ public class MouseRaycating : MonoBehaviour
                 if (target != null)
                 {
                     target.ReactToHit();
+                    // broadvast messge when hit block. Display will receive this messge and show enw result
+                    Messenger.Broadcast(GameEvent.ENEMY_HIT);
                 }
                 else {
                     StartCoroutine(SphereIndicator(hit.point));
